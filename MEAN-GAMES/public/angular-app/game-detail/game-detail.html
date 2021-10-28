@@ -1,0 +1,41 @@
+<div class="d-flex w-100 justify-content-between align-items-center">
+  <h1>game for: {{vm.game.ts | date: "MMM-dd-yyyy, hh:mm"}}</h1>
+  
+</div>
+<div class="card mb-3">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Location longitude
+      <span class="badge bg-info rounded-pill">{{vm.game.position.coordinates[0]}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Location latitude
+      <span class="badge bg-info rounded-pill">{{vm.game.position.coordinates[1]}}</span>
+    </li>
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Title
+      <span class="badge bg-info rounded-pill">{{vm.game.title}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Year
+      <span class="badge bg-info rounded-pill">{{vm.game.year}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Rate
+      <span class="badge bg-info rounded-pill">{{vm.game.rate}}</span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      MinPlayers
+      <span class="badge bg-info rounded-pill">{{vm.game.minPlayers}}</span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      MaxPlayers
+      <span class="badge bg-info rounded-pill">{{vm.game.maxPlayers}}</span>
+    </li>
+    
+  </ul>
+
+</div>

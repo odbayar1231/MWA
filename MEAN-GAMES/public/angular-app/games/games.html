@@ -1,0 +1,57 @@
+<h1>Game app</h1>
+<form class="d-flex" ng-submit="vm.search()">
+  <input
+    class="form-control me-sm-2"
+    type="number"
+    placeholder="Longitude"
+    ng-model="vm.locationSearch.lng"
+    required="true"
+    step=any 
+  />
+  <input
+    class="form-control me-sm-2"
+    type="number"
+    placeholder="Latitude"
+    ng-model="vm.locationSearch.lat"
+    required="true"
+    step=any 
+  />
+  <input
+    class="form-control me-sm-2"
+    type="number"
+    placeholder="Distance"
+    ng-model="vm.locationSearch.distance"
+    required="true"
+    step=any 
+  />
+  
+    
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+
+
+  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="list-group mt-4">
+  <li
+    ng-repeat="Game in vm.Games | orderBy: 'ts'"
+    class="list-group-item list-group-item-action d-flex align-items-center"
+  >
+    <a class="list-group-item-action" href="/#!/Games/{{Game._id}}">
+      {{Game.ts | date: "MMM-dd-yyyy, hh:mm"}}
+
+      <strong>lng: {{Game.position.coordinates[0]}}</strong>,
+      <strong>lat: {{Game.position.coordinates[1]}}</strong> 
+    </a>
+    <button
+      class="btn btn-danger btn-sm ms-2"
+      ng-click="vm.deleteGame(Game._id)"
+    >
+      Delete
+    </button>
+  </li>
+  <li class="list-group-item text-warning" ng-show="vm.Games.length == 0">
+    Not found
+  </li>
+</div>
